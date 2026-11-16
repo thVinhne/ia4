@@ -58,3 +58,21 @@
 **Rejected:** None recorded for this request.
 
 **Verification:** The assistant reported 3 of 3 wishlist tests passing. The user reran the catalogue tests with 11 of 11 passing and ran lint with no errors or warnings. The user reported that the manual checks passed, including the wishlist browser checks and React DevTools provider inspection. The source was inspected for row 20. The full 19-test suite was not run for this step.
+
+## 2026-11-16 — Implement checkout
+
+**Tool:** OpenAI Codex.
+
+**Before commit:** `7b6a3ee`.
+
+**Request:** Implement checkout F1–F5 with React state. Add the labeled checkout form inside the cart, derive validation errors from the current fields after the first submission, handle an empty cart and a valid order, limit the note to 200 characters, and preserve the wishlist. Run the existing tests and lint while preserving the protected files and dependencies.
+
+**Result:** Added `src/components/CheckoutForm.jsx` and updated `src/components/CartSummary.jsx` and `src/App.jsx`.
+
+**Kept:** Validation derived from the form values and the order confirmation using the cart count and total, based on source inspection and the reported manual checks.
+
+**Changed:** None recorded for this request.
+
+**Rejected:** None recorded for this request.
+
+**Verification:** The implementing assistant reported 19 of 19 tests passing, lint without errors or warnings, and an empty protected-files diff. The user reported that the manual form, note, valid-order, keyboard, and focus checks passed. The source was inspected for row 20 and the protected-files diff was checked.

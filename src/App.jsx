@@ -66,7 +66,7 @@ function Shop() {
       <p role="status">{message}</p>
       {status === 'error' && <button type="button" onClick={retrySearch}>Retry</button>}
       <ProductList products={products} onAddToCart={(product) => setCart((items) => [...items, product])} />
-      <CartSummary cart={cart} />
+      <CartSummary cart={cart} onPlaceOrder={() => setCart([])} />
       <SavedPanel />
       </main>
     </>
