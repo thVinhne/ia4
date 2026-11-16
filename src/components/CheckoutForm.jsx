@@ -26,28 +26,28 @@ export default function CheckoutForm({ count, total, onPlaceOrder }) {
 
   return (
     <form aria-label="Checkout" onSubmit={handleSubmit} noValidate>
-      <div>
-        <label htmlFor="checkout-name">Name</label>
-        <input id="checkout-name" type="text" value={name} onChange={(event) => setName(event.target.value)}
+      <div className="mb-3">
+        <label className="form-label" htmlFor="checkout-name">Name</label>
+        <input className="form-control" id="checkout-name" type="text" value={name} onChange={(event) => setName(event.target.value)}
           aria-invalid={submitted && nameInvalid ? 'true' : undefined}
           aria-describedby={submitted && nameInvalid ? 'checkout-name-error' : undefined} />
-        {submitted && nameInvalid && <p id="checkout-name-error">Enter your name.</p>}
+        {submitted && nameInvalid && <p className="text-danger mt-1" id="checkout-name-error">Enter your name.</p>}
       </div>
-      <div>
-        <label htmlFor="checkout-phone">Phone</label>
-        <input id="checkout-phone" type="tel" value={phone} onChange={(event) => setPhone(event.target.value)}
+      <div className="mb-3">
+        <label className="form-label" htmlFor="checkout-phone">Phone</label>
+        <input className="form-control" id="checkout-phone" type="tel" value={phone} onChange={(event) => setPhone(event.target.value)}
           aria-invalid={submitted && phoneInvalid ? 'true' : undefined}
           aria-describedby={submitted && phoneInvalid ? 'checkout-phone-error' : undefined} />
-        {submitted && phoneInvalid && <p id="checkout-phone-error">Enter a 10-digit phone number starting with 0.</p>}
+        {submitted && phoneInvalid && <p className="text-danger mt-1" id="checkout-phone-error">Enter a 10-digit phone number starting with 0.</p>}
       </div>
-      <div>
-        <label htmlFor="checkout-note">Note (optional)</label>
-        <textarea id="checkout-note" maxLength={200} value={note} onChange={(event) => setNote(event.target.value)} />
+      <div className="mb-3">
+        <label className="form-label" htmlFor="checkout-note">Note (optional)</label>
+        <textarea className="form-control" id="checkout-note" maxLength={200} value={note} onChange={(event) => setNote(event.target.value)} />
         <span>{note.length}/200</span>
       </div>
       {submitted && count === 0 && <p>Add something to the cart first.</p>}
       {confirmation && <p>{confirmation}</p>}
-      <button type="submit">Place order</button>
+      <button className="btn btn-primary" type="submit">Place order</button>
     </form>
   );
 }

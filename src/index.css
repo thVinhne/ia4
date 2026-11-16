@@ -1,11 +1,10 @@
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.5; color: #1d1d1f; background: #fafafa; }
-main { max-width: 960px; margin: 0 auto; padding: 16px 16px 96px; }
-header { max-width: 960px; margin: 0 auto; padding: 16px 16px 0; }
-button { min-height: 44px; padding: 0 14px; font: inherit; cursor: pointer; }
-input { display: block; width: 100%; max-width: 30rem; min-height: 44px; padding: 8px; font: inherit; }
-.cart, .product-card { border: 1px solid #ccc; border-radius: 8px; padding: 16px; background: white; overflow-wrap: anywhere; }
-.cart { margin: 16px 0; }
-.cart h2, .product-card h2 { margin: 0; font-size: 1.25rem; }
-.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; padding: 0; list-style: none; }
-.product-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+body { background: #f8f9fa; }
+main { padding-bottom: 96px !important; }
+button { min-height: 44px; }
+input.form-control { min-height: 44px; }
+.product-card, .cart { overflow-wrap: anywhere; }
+.product-card h2, .cart h2 { font-size: 1.25rem; }
+button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid #174ea6;
+  outline-offset: 2px;
+}

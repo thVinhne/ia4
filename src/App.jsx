@@ -57,14 +57,14 @@ function Shop() {
   const message = { loading: 'Loading products…', empty: 'No products match.', error: 'Could not load products.', ready: '' }[status];
   return (
     <>
-      <header>
+      <header className="container pt-4">
         <h1>Shop</h1>
         <p>Saved: {savedProducts.length}</p>
       </header>
-      <main>
+      <main className="container pb-5">
       <SearchBox value={query} onChange={changeQuery} />
       <p role="status">{message}</p>
-      {status === 'error' && <button type="button" onClick={retrySearch}>Retry</button>}
+      {status === 'error' && <button className="btn btn-outline-primary mb-3" type="button" onClick={retrySearch}>Retry</button>}
       <ProductList products={products} onAddToCart={(product) => setCart((items) => [...items, product])} />
       <CartSummary cart={cart} onPlaceOrder={() => setCart([])} />
       <SavedPanel />

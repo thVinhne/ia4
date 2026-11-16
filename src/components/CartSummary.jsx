@@ -4,7 +4,7 @@ export default function CartSummary({ cart, onPlaceOrder }) {
   const count = cart.length;
   const total = cart.reduce((sum, product) => sum + product.price, 0);
   return (
-    <aside aria-label="Cart" className="cart">
+    <aside aria-label="Cart" className="card p-3 my-4 cart">
       <h2>Cart</h2>
       <p>{count} {count === 1 ? 'item' : 'items'}</p>
       <p>{total.toLocaleString('vi-VN')} đ</p>

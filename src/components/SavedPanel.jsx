@@ -4,7 +4,7 @@ export default function SavedPanel() {
   const { savedProducts } = useWishlist();
 
   return (
-    <section aria-label="Saved">
+    <section aria-label="Saved" className="card p-3 my-4">
       <h2>Saved</h2>
       {savedProducts.length === 0 && <p>Nothing saved yet.</p>}
       <ul>

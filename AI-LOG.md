@@ -76,3 +76,21 @@
 **Rejected:** None recorded for this request.
 
 **Verification:** The implementing assistant reported 19 of 19 tests passing, lint without errors or warnings, and an empty protected-files diff. The user reported that the manual form, note, valid-order, keyboard, and focus checks passed. The source was inspected for row 20 and the protected-files diff was checked.
+
+## 2026-11-16 — Apply Bootstrap CSS
+
+**Tool:** OpenAI Codex.
+
+**Before commit:** `65849e0`.
+
+**Request:** Apply C1–C3 using Bootstrap 5 installed with npm. Import its CSS before the project's CSS, style the existing components while preserving their semantics and behaviour, and support the specified viewport sizes, button heights, keyboard focus, and operation with external network access blocked. Run the existing tests and lint.
+
+**Result:** Installed Bootstrap 5.3.9, updated `package.json` and `package-lock.json`, imported its CSS in `src/main.jsx`, and updated the shop components and `src/index.css` with Bootstrap classes and local styles. The initial install encountered a DNS error and the retry succeeded.
+
+**Kept:** The npm-installed Bootstrap dependency and its local CSS import, based on inspection of `package.json`, `src/main.jsx`, and the reported manual checks.
+
+**Changed:** None recorded for this request.
+
+**Rejected:** None recorded for this request.
+
+**Verification:** The implementing assistant reported 19 of 19 tests passing and lint with no errors or warnings. The user reported that all manual checks passed, including viewport sizes 360, 768, and 1280 px, button heights, keyboard focus, and loading with external network access blocked. The protected-files diff was empty, `npm ls bootstrap` reported 5.3.9, and the CSS import was inspected. No build script exists in `package.json`. The assistant reported three npm audit findings (one moderate and two critical); audit fixes were not applied.
