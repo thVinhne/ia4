@@ -62,3 +62,10 @@
 - **Decision:** kept.
 - **What decided it:** Done means row 16 requires confirmation, an empty cart, and an unchanged address bar. I checked a valid order in the browser and inspected the submit handler.
 - **Why:** The confirmation uses the current count and total before the cart and fields are cleared.
+
+## 10. Bootstrap installed and imported locally
+
+- **Where:** commit `11359ab`, `package.json` line 16 and `src/main.jsx` lines 3–4.
+- **Decision:** kept.
+- **What decided it:** Done means rows 13 and 19 require one npm-installed CSS framework and a styled page without external network access. I inspected the dependency and import, and checked the page with external network access blocked.
+- **Why:** The project imports Bootstrap CSS from the installed package before its local styles, so the framework is available through the local development server.
