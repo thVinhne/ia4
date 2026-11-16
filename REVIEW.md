@@ -28,3 +28,23 @@
 - **What decided it:** Item 1 of `brief.md` specifies the product list before the cart. The initial assistant output placed the cart first.
 - **Why:** I requested that the list be rendered before the cart to match the brief. The initial order appeared in the diff shared during review, but it was not committed separately. Commit `72f2ac9` contains the corrected order.
 - **Sentence sent:** Mục 1 của brief.md yêu cầu danh sách sản phẩm xuất hiện trước giỏ hàng, nhưng App.jsx đang render CartSummary trước ProductList. Hãy đổi thứ tự hai component và kiểm tra lại trang.
+## 5. One wishlist provider for the page
+
+- **Where:** commit `b81f396`, `src/App.jsx` line 9 and `src/WishlistContext.jsx` lines 5–6 and 16–19.
+- **Decision:** kept.
+- **What decided it:** Done means rows 15 and 20 require one provider for the page and wishlist state in `WishlistContext.jsx`. I inspected the source and checked the component tree in React DevTools.
+- **Why:** The header, product cards, and Saved panel share the same saved-products state.
+
+## 6. Product cards read saved state through a hook
+
+- **Where:** commit `b81f396`, `src/components/ProductCard.jsx` lines 6–7 and 15.
+- **Decision:** kept.
+- **What decided it:** Done means row 20 requires `ProductCard` to read the wishlist through a hook. I inspected the code and verified that it calls `useWishlist()` and derives `aria-pressed` from the saved products.
+- **Why:** The button reflects the shared wishlist when a product returns after a search.
+
+## 7. Saved count derived from the wishlist
+
+- **Where:** commit `b81f396`, `src/App.jsx` lines 13 and 62.
+- **Decision:** kept.
+- **What decided it:** Done means row 20 requires the count to be computed. I inspected the header and found it displays `savedProducts.length`.
+- **Why:** The displayed count uses the same list as the Saved panel.
