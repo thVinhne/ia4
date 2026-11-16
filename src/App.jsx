@@ -2,8 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 import SearchBox from './components/SearchBox.jsx';
 import ProductList from './components/ProductList.jsx';
 import CartSummary from './components/CartSummary.jsx';
+import SavedPanel from './components/SavedPanel.jsx';
+import { WishlistProvider, useWishlist } from './WishlistContext.jsx';
 
 export default function App() {
+  return <WishlistProvider><Shop /></WishlistProvider>;
+}
+
+function Shop() {
+  const { savedProducts } = useWishlist();
   const [query, setQuery] = useState('');
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
@@ -49,13 +56,19 @@ export default function App() {
 
   const message = { loading: 'Loading products…', empty: 'No products match.', error: 'Could not load products.', ready: '' }[status];
   return (
-    <main>
-      <h1>Shop</h1>
+    <>
+      <header>
+        <h1>Shop</h1>
+        <p>Saved: {savedProducts.length}</p>
+      </header>
+      <main>
       <SearchBox value={query} onChange={changeQuery} />
       <p role="status">{message}</p>
       {status === 'error' && <button type="button" onClick={retrySearch}>Retry</button>}
       <ProductList products={products} onAddToCart={(product) => setCart((items) => [...items, product])} />
       <CartSummary cart={cart} />
-    </main>
+      <SavedPanel />
+      </main>
+    </>
   );
 }

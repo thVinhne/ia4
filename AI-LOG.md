@@ -40,3 +40,21 @@
 **Changed:** The product list and cart rendering order.
 
 **Verification:** The source order was inspected. Browser checks and test results are not recorded here.
+
+## 2026-11-16 — Implement the wishlist
+
+**Tool:** OpenAI Codex.
+
+**Before commit:** `f022ce4`.
+
+**Request:** Implement W1–W5 with one wishlist context provider for the page, a Save toggle on each product card, a computed saved count in the header, and a Saved panel. Keep saved products when a search hides them. Preserve the existing Session 6 behaviour and protected files, and run the wishlist checks, catalogue checks, and lint.
+
+**Result:** Added `src/WishlistContext.jsx` and `src/components/SavedPanel.jsx`, and updated `src/App.jsx`, `src/components/ProductCard.jsx`, and `src/index.css`.
+
+**Kept:** The shared provider, the card's context hook, and the saved count computed from the saved products, based on source review for row 20.
+
+**Changed:** None recorded for this request.
+
+**Rejected:** None recorded for this request.
+
+**Verification:** The assistant reported 3 of 3 wishlist tests passing. The user reran the catalogue tests with 11 of 11 passing and ran lint with no errors or warnings. The user reported that the manual checks passed, including the wishlist browser checks and React DevTools provider inspection. The source was inspected for row 20. The full 19-test suite was not run for this step.
