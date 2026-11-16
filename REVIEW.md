@@ -27,4 +27,4 @@
 - **Decision:** changed.
 - **What decided it:** Item 1 of `brief.md` specifies the product list before the cart. The initial assistant output placed the cart first.
 - **Why:** I requested that the list be rendered before the cart to match the brief. The initial order appeared in the diff shared during review, but it was not committed separately. Commit `72f2ac9` contains the corrected order.
-- **Sentence sent:** [Insert the exact correction request you sent to the assistant.]
+- **Sentence sent:** Mục 1 của brief.md yêu cầu danh sách sản phẩm xuất hiện trước giỏ hàng, nhưng App.jsx đang render CartSummary trước ProductList. Hãy đổi thứ tự hai component và kiểm tra lại trang.
