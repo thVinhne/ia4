@@ -48,3 +48,17 @@
 - **Decision:** kept.
 - **What decided it:** Done means row 20 requires the count to be computed. I inspected the header and found it displays `savedProducts.length`.
 - **Why:** The displayed count uses the same list as the Saved panel.
+
+## 8. Checkout validation derived from field values
+
+- **Where:** commit `b3dc864`, `src/components/CheckoutForm.jsx` lines 4–10 and 30–41.
+- **Decision:** kept.
+- **What decided it:** Done means rows 17 and 20 require field messages after the first submission and errors computed from current values. I inspected the code and checked the invalid and corrected fields in the browser.
+- **Why:** The form derives each validation result from the input value and links the displayed message to its field.
+
+## 9. Order confirmation before clearing the cart
+
+- **Where:** commit `b3dc864`, `src/components/CheckoutForm.jsx` lines 12–24.
+- **Decision:** kept.
+- **What decided it:** Done means row 16 requires confirmation, an empty cart, and an unchanged address bar. I checked a valid order in the browser and inspected the submit handler.
+- **Why:** The confirmation uses the current count and total before the cart and fields are cleared.
